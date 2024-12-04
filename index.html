@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hide And Unhide</title>
+    <style>
+        div>p {
+            text-align: justify;
+            color: blueviolet;
+            font-weight: bold;
+            border: 3px solid black;
+            padding: 10px;
+        }
+
+        div {
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            font-weight: bold;
+            background-color: red;
+            color: white;
+        }
+
+        button:nth-of-type(2) {
+            background-color: green;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+            sapiente iure possimus corporis, maxime velit quos aspernatur earum
+            tempore sit ut ducimus, asperiores impedit voluptate aliquid, delectus
+            obcaecati nobis itaque. Harum ipsa ab, omnis similique est quos, dicta
+            quis fugiat, maxime distinctio dolor laborum sequi tempora minus quas
+            ducimus nemo.
+        </p>
+    </div>
+
+    <div class="buttons">
+        <button id="hideButton">Hide</button>
+        <button id="unhideButton">Unhide</button>
+    </div>
+
+    <script>
+        const textParagraph = document.getElementById('paragraph');
+        const hideButton = document.getElementById('hideButton');
+        const unhideButton = document.getElementById('unhideButton');
+
+        hideButton.addEventListener('click', () => {
+            textParagraph.textContent = '';
+        });
+
+        unhideButton.addEventListener('click', () => {
+            textParagraph.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus sapiente iure possimus corporis, maxime velit quos aspernatur earum tempore sit ut ducimus, asperiores impedit voluptate aliquid, delectus obcaecati nobis itaque. Harum ipsa ab, omnis similique est quos, dicta quis fugiat, maxime distinctio dolor laborum sequi tempora minus quas ducimus nemo.'; // Restore the original text
+        });
+    </script>
+</body>
+
+</html>
